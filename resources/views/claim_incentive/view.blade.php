@@ -119,9 +119,9 @@
                                     <td>{{($k+1)}}</td>
                                     <td>{{$v->getCategory($v->category)}}</td>
                                     <td>{{$v->deposit_account}}</td>
-                                    <td>{{$v->deposited_amt}}</td>
-                                    <td>{{$claim->getDate($v->date_deposited)}}</td>
-                                    <td>{{$v->incentive_amt}}</td>
+                                    <td>{{number_format($v->deposited_amt, 2, '.', '')}}</td>
+                                    <td>@if (isset($v->date_deposited)){{$claim->getDate($v->date_deposited)}}@endif</td>
+                                    <td>{{number_format($v->incentive_amt, 2, '.', '')}}</td>
                                     <td>{{$v->remarks}}</td>
                                     
                                 </tr>
