@@ -96,7 +96,7 @@ class ApplicationController extends Controller
             'dob'                   => 'required|date',
             'passport_no'           => ['required_without_all:nid_no,birth_certificate_no','unique:applications,passport_no','alpha_num','min:10','max:15','nullable'],
             'nid_no'                => ['required_without_all:passport_no,birth_certificate_no','unique:applications,nid_no','nid_length','nullable'],
-            'birth_certificate_no'  => ['required_without_all:passport_no,nid_no','unique:applications,birth_certificate_no','digits:17','nullable'],
+            'birth_certificate_no'  => ['required_without_all:passport_no,nid_no','unique:applications,birth_certificate_no','min:10','nullable'],
             'place_of_birth'        =>'required|alpha',
 
             'nid_image'                 =>'required_with:nid_no|file|mimes:jpeg,png,jpg|max:5120|nullable',
@@ -121,7 +121,7 @@ class ApplicationController extends Controller
             'cell' => ['required','digits:11','unique:applications,cell','regex:/(01)[0-9]{9}/'],
             'cell_years'=>'required|integer',
             'email'=>['required','email','unique:users,email'],
-            'tin'=>'nullable|digits:9',
+            'tin'=>'nullable|digits:12',
             'social'=>['nullable','max:100','regex:/(http\:\/\/|https:\/\/)?(www.)?(facebook.com\/|linkedin.com\/in\/|instagram.com\/)(.){1,80}/'],
             'social_years'=>'nullable|required_with:social|digits_between:1,2',
             'occupation'=>'nullable|alpha_spaces|max:100',

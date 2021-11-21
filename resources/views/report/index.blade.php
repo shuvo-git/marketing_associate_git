@@ -87,6 +87,30 @@
 
 <script>
 
+function getBranchesByCluster(cluster_id) {
+    $.ajax({
+        url : "{{ url('/getBranchesByCluster') }}",
+        type : "POST",
+        //dataType : "json",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        },
+        cache : false,
+        data: {
+            cluster_id: cluster_id
+        },
+        timeout: 3000,
+        success : function(data) 
+        {
+            $("#branch").html(data);
+        },
+        error: function() 
+        {
+            //alert("#"+id+"_district. Error");
+        }
+    });
+}
+
 $(function(){
     $("#table_list").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,

@@ -247,9 +247,9 @@
 							<dd class="col-sm-8">:  {{ $Application->employee_reference_name }}</dd>
 							<dd class="col-sm-4">Relationship</dd>
 							<dd class="col-sm-8">:  {{ $Application->employee_reference_relationship }}</dd>
-							<dd class="col-sm-4">Phone 1</dd>
+							<dd class="col-sm-4">Employee ID</dd>
 							<dd class="col-sm-8">:  {{ $Application->employee_reference_employee_id }}</dd>
-							<dd class="col-sm-4">Phone 2</dd>
+							<dd class="col-sm-4">Contact</dd>
 							<dd class="col-sm-8">:  {{ $Application->employee_reference_contact }}</dd>
 						</dl>
 					</address>

@@ -65,6 +65,7 @@ Route::post('incentive_calc'      , 'IncentiveCalculator@calc');
 
 Route::get('/report', 'ReportController@index');
 Route::post('/report', 'ReportController@index');
+Route::post('/getBranchesByCluster', 'ReportController@getBranchesByClusterID');
 
 Auth::routes();
 
